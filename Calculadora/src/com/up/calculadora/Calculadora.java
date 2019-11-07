@@ -131,12 +131,12 @@ public class Calculadora {
 		}
 	}
 
-	public static String poligonos(int lados, ArrayList<Integer> tamanhos) {
-		
-		if (lados == 3) {
-			int x = tamanhos.get(0);
-			int y = tamanhos.get(1);
-			int z = tamanhos.get(2);
+	public static String calcularPoligonos(int l, ArrayList<Integer> t) {
+		if(l >= 3) {
+		if (l == 3) {
+			int x = t.get(0);
+			int y = t.get(1);
+			int z = t.get(2);
 
 			if (x == y && x == z) {
 				return "O Poligono é um Triangulo Equilatero";
@@ -145,11 +145,11 @@ public class Calculadora {
 			} else {
 				return "O Poligono é um Triangulo Escaleno";
 			}
-		} else if (lados == 4) {
-			int v = tamanhos.get(0);
-			int x = tamanhos.get(1);
-			int y = tamanhos.get(2);
-			int z = tamanhos.get(3);
+		} else if (l == 4) {
+			int v = t.get(0);
+			int x = t.get(1);
+			int y = t.get(2);
+			int z = t.get(3);
 
 			if (v == x && y == z && z == v) {
 				return "O Poligono é um Quadrado";
@@ -157,7 +157,10 @@ public class Calculadora {
 				return "O Poligono tem quatro lados";
 			}
 		} else {
-			return "O Poligono tem " + lados + " lados";
+			return "O Poligono tem " + l + " lados";
+		}
+		}else {
+			return "Não é um poligono";
 		}
 
 	}

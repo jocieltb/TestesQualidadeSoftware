@@ -176,24 +176,31 @@ public class Principal {
 	}
 	
 	private static void calcularPoligono() {
+		
 		int lados = Console.recuperaInteiro("\nInforme o número de lados do poligono:");
-
-		Integer tamanho;
 
 		ArrayList<Integer> tamanhos = new ArrayList<>();
 
-		for (int i = 0; i < lados; i++) {
+		if (lados >= 3) {
 
-			tamanho = Console.recuperaInteiro("Informe o tamanho do Lado " + (i + 1) + ":");
+			Integer tamanho;
 
-			tamanhos.add(tamanho);
+			for (int i = 0; i < lados; i++) {
+
+				tamanho = Console.recuperaInteiro("Informe o tamanho do Lado " + (i + 1) + ":");
+
+				tamanhos.add(tamanho);
+			}
+
+			System.out.println(Calculadora.calcularPoligonos(lados, tamanhos));
+
+			System.out.println("O perimetro é " + Calculadora.calcularPerimetro(tamanhos)+"\n\n");
+
+		} else {
+			System.out.println(Calculadora.calcularPoligonos(lados, tamanhos));
 		}
-
-		System.out.println(Calculadora.poligonos(lados, tamanhos));
-
-		System.out.println("O perimetro é " + Calculadora.calcularPerimetro(tamanhos));
 	}
-	
+
 	private static void calcularAngulo() {
 		Calculadora.angulo();
 	}
